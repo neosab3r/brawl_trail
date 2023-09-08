@@ -14,8 +14,8 @@ public class MainUIModel
         InitButton(buttonsContainer, "JoinButton", EMainUIButtonType.Join);
         InitButton(buttonsContainer, "CreateButton", EMainUIButtonType.Create);
 
-        InitUIContainer("", EMainUIButtonType.Create);
-        InitUIContainer("", EMainUIButtonType.Join);
+        InitUIContainer("UICreateRoom", EMainUIButtonType.Create);
+        //InitUIContainer("", EMainUIButtonType.Join);
 
         foreach (var container in uiContainers)
         {
@@ -44,17 +44,17 @@ public class MainUIModel
     private void InitButton(VisualElement buttonsContainer, string name, EMainUIButtonType buttonType)
     {
         var button = buttonsContainer.Q<Button>(name);
-        var toolButtonElement = new UIBaseButton<EMainUIButtonType>(button, buttonType);
-        toolButtonElement.Subscribe(OnButtonClick);
+        var buttonElement = new UIBaseButton<EMainUIButtonType>(button, buttonType);
+        buttonElement.Subscribe(OnButtonClick);
         
-        uiButtons.Add(toolButtonElement);
+        uiButtons.Add(buttonElement);
     }
 
     private void OnButtonClick(EMainUIButtonType buttonType)
     {
-        Debug.Log(buttonType);
         foreach (var container in uiContainers)
         {
+            Debug.Log(container.ToolType + " -- " + buttonType);
             if (container.ToolType == buttonType && container.IsShowing == false)
             {
                 container.Show();
