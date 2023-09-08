@@ -2,7 +2,7 @@ using UnityEngine.UIElements;
 
 public abstract class UIContainer
 {
-    public virtual EMainUIButtonType ToolType { get; }
+    public virtual EMenuMainUIButtonType ToolType { get; }
     public bool IsShowing { get; private set; }
 
     protected VisualElement root;

@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class CreateRoomUIModel: UIContainer
 {
-    public override EMainUIButtonType ToolType => EMainUIButtonType.Create;
+    public override EMenuMainUIButtonType ToolType => EMenuMainUIButtonType.Create;
     private List<UIBaseButton<ECreateRoomUIButtonType>> uiButtons = new List<UIBaseButton<ECreateRoomUIButtonType>>();
     
     public CreateRoomUIModel(VisualElement root) : base(root)
