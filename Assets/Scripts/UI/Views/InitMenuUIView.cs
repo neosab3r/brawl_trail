@@ -3,9 +3,9 @@ using PTiles.Core.Scripts.Views.TilemapEditor.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class InitUIView : MonoBehaviour
+public class InitMenuUIView : MonoBehaviour
 {
-    [SerializeField] private EGameUIType uiType;
+    [SerializeField] private EMenuUIType uiType;
     [SerializeField] private UIDocument document;
 
     private void Start()

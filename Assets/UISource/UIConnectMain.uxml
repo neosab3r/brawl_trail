@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UISource/UIConnectMain.uss?fileID=7433441132597879392&amp;guid=e8bd22c72d3fd9e4c9daf5f8d2696b12&amp;type=3#UIConnectMain" />
+    <ui:VisualElement name="MainContainer" style="justify-content: center; align-items: center; flex-direction: column; height: 1080px;">
+        <ui:VisualElement name="ProgressBarContainer" style="justify-content: center; height: 70px; width: 767px; align-items: stretch; flex-direction: column; position: absolute; top: 849px; left: 594px;">
+            <ui:ProgressBar title="Присоединение к серверу.." high-value="100" name="ConnectProgressBar" class="unity-progress-bar__background unity-progress-bar__progress" style="color: rgb(255, 255, 255); position: relative; background-color: rgba(10, 10, 10, 0); height: auto; min-height: auto; justify-content: center; align-items: stretch; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; margin-bottom: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

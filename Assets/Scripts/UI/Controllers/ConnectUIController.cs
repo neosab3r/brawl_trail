@@ -1,18 +1,17 @@
-using System;
+﻿using System;
 using OLS_HyperCasual;
 using PTiles.Core.Scripts.Views.TilemapEditor.UI;
 using UnityEngine.UIElements;
 
-
-public class MenuUIController : BaseController
+public class ConnectUIController : BaseController
 {
-    private MenuMainUIModel mainModel;
+    private ConnectMainUIModel mainUIModel;
     
-    public void SetUiByType(EMenuUIType uiType, VisualElement root)
+    public void SetUiByType(EConnectUIType uiType, VisualElement root)
     {
         switch (uiType)
         {
-            case EMenuUIType.MainUI:
+            case EConnectUIType.MainUI:
                 SetMainUIRoot(root);
                 break;
             default:
@@ -22,6 +21,6 @@ public class MenuUIController : BaseController
 
     private void SetMainUIRoot(VisualElement root)
     {
-        mainModel = new MenuMainUIModel(root);
+        mainUIModel = new ConnectMainUIModel(root);
     }
 }
