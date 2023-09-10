@@ -8,8 +8,8 @@ public class UIBaseProgressBar
         ProgressBarRoot = root;
     }
 
-    public void ChangeValue()
+    public void ChangeValue(int value)
     {
-        ProgressBarRoot.value = 50;
+        ProgressBarRoot.value = value;
     }
 }

@@ -1,0 +1,5 @@
+enum EJoinRoomUIButtonType
+{
+    Back,
+    Join
+}

@@ -12,7 +12,15 @@ public class MenuEntryPoint : BaseEntryPoint
 
     protected override void InitControllers()
     {
+        /*var connect = GameObject.Find("ConnectEntryPoint").GetComponent<ConnectEntryPoint>();
+        connect.SubscribeOnBaseControllersInit(() =>
+        {
+            AddEntryPoint(connect);
+            Debug.Log("Add");
+        });*/
         AddController(new MenuUIController());
+        AddController(new CreateRoomController());
+        AddController(new JoinRoomController());
         base.InitControllers();
     }
     
