@@ -2,7 +2,7 @@ using OLS_HyperCasual;
 
 public class JoinRoomController : BaseController
 {
-    private JoinRoomView View;
+    public JoinRoomView View;
 
     public void AddView(JoinRoomView roomView)
     {

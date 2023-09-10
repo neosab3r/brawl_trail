@@ -18,6 +18,7 @@ public class MenuEntryPoint : BaseEntryPoint
             AddEntryPoint(connect);
             Debug.Log("Add");
         });*/
+        AddController(new ResourcesController());
         AddController(new MenuUIController());
         AddController(new CreateRoomController());
         AddController(new JoinRoomController());

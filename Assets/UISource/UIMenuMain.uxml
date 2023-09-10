@@ -1,11 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="UICreateRoom" src="project://database/Assets/UISource/Containers/UICreateRoom.uxml?fileID=9197481963319205126&amp;guid=e083b612ca72c894a8063ad6348b9262&amp;type=3#UICreateRoom" />
+    <ui:Template name="UIJoinRoom" src="project://database/Assets/UISource/Containers/UIJoinRoom.uxml?fileID=9197481963319205126&amp;guid=16e43d6dcd0c55f45b99fcd1ce022c70&amp;type=3#UIJoinRoom" />
     <Style src="project://database/Assets/UISource/UIMenuMain.uss?fileID=7433441132597879392&amp;guid=34f9b1e58901a49438760393c7b1767c&amp;type=3#UIMenuMain" />
     <ui:VisualElement name="UIMainDisplay" style="align-items: center; width: auto; height: 1080px; position: relative; transform-origin: center; left: auto; justify-content: center; max-width: none; max-height: none; translate: 0 0; top: auto; right: auto; bottom: auto;">
-        <ui:GroupBox name="ButtonsContainer" style="height: auto; width: auto; flex-direction: column; align-items: stretch; justify-content: center; min-width: 400px;">
+        <ui:GroupBox name="ButtonsContainer" style="height: 202px; width: 417px;">
             <ui:Button text="Присоединиться" display-tooltip-when-elided="true" name="JoinButton" style="width: auto; height: 90px; -unity-text-align: middle-center; font-size: 22px; background-color: rgb(72, 72, 72);" />
             <ui:Button text="Создать" display-tooltip-when-elided="true" name="CreateButton" style="height: 100px; width: auto; font-size: 22px; background-color: rgb(72, 72, 72);" />
         </ui:GroupBox>
     </ui:VisualElement>
-    <ui:Instance template="UICreateRoom" name="UICreateRoom" style="visibility: visible; justify-content: center; align-items: stretch; font-size: 12px; overflow: visible; display: none; position: absolute; top: 436px; left: 664px; background-color: rgb(38, 38, 38); -unity-background-image-tint-color: rgb(255, 255, 255);" />
+    <ui:Instance template="UICreateRoom" name="UICreateRoom" style="visibility: visible; justify-content: center; align-items: stretch; font-size: 12px; overflow: visible; display: none; position: absolute; top: auto; left: auto; background-color: rgb(38, 38, 38); -unity-background-image-tint-color: rgb(255, 255, 255); width: 1920px; right: auto; bottom: auto; flex-basis: auto; flex-grow: 1; height: 1080px;" />
+    <ui:Instance template="UIJoinRoom" name="UIJoinRoom" style="position: absolute; display: none; width: 1925px; left: -3px;" />
 </ui:UXML>

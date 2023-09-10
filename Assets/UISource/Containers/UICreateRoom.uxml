@@ -1,12 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UISource/Containers/UICreateRoom.uss?fileID=7433441132597879392&amp;guid=4b529fd825dfa684b830f889d19a326c&amp;type=3#UICreateRoom" />
-    <ui:VisualElement name="TopContainer" style="height: 50px; align-items: flex-start; justify-content: center; background-color: rgb(0, 0, 0); position: relative; overflow: visible; visibility: visible; width: 644px;">
-        <ui:Button text="Назад" display-tooltip-when-elided="true" name="BackButton" style="align-items: stretch; height: 33px; width: 81px; justify-content: flex-start; background-color: rgb(72, 72, 72);" />
+    <ui:VisualElement name="TopContainer" style="height: 160px; align-items: flex-start; justify-content: center; background-color: rgb(0, 0, 0); position: relative; overflow: visible; visibility: visible; width: auto;">
+        <ui:Button text="Назад" display-tooltip-when-elided="true" name="BackButton" style="align-items: stretch; height: 75px; width: 161px; justify-content: flex-start; background-color: rgb(72, 72, 72); font-size: 20px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="MainContainer" style="height: 132px; justify-content: center; visibility: visible; align-items: center; -unity-text-align: upper-left; flex-direction: row;">
-        <ui:TextField picking-mode="Ignore" label="Комната:" value="filler text" text="                       Введите название команты" is-delayed="false" name="NameRoom" password="false" readonly="false" class="unity-base-text-field__input" style="height: 79px; width: 639px; justify-content: flex-start; font-size: 15px; -unity-text-align: middle-center; white-space: nowrap; word-spacing: 0; overflow: hidden; color: rgb(253, 253, 253); background-color: rgb(72, 72, 72); align-items: stretch; flex-direction: row;" />
+    <ui:VisualElement name="MainContainer" style="height: 440px; justify-content: center; visibility: visible; align-items: center; -unity-text-align: upper-left; flex-direction: row;">
+        <ui:TextField picking-mode="Ignore" label="Комната:" value="filler text" text="                       Введите название команты" is-delayed="false" name="NameRoom" password="false" readonly="false" class="unity-base-text-field__input" style="height: 131px; width: 639px; justify-content: flex-start; font-size: 20px; -unity-text-align: middle-center; white-space: nowrap; word-spacing: 0; overflow: hidden; color: rgb(253, 253, 253); background-color: rgb(72, 72, 72); align-items: stretch; flex-direction: row;" />
     </ui:VisualElement>
-    <ui:VisualElement name="BottomContainer" style="justify-content: center; align-items: center; height: 128px; visibility: visible;">
-        <ui:Button text="Создать" display-tooltip-when-elided="true" name="CreateRoomButton" style="justify-content: flex-start; align-items: stretch; position: relative; top: auto; right: auto; width: 159px; left: auto; height: 63px; bottom: auto; font-size: 15px; background-color: rgb(72, 72, 72);" />
+    <ui:VisualElement name="BottomContainer" style="justify-content: center; align-items: center; height: 272px; visibility: visible;">
+        <ui:Button text="Создать" display-tooltip-when-elided="true" name="CreateRoomButton" style="justify-content: flex-start; align-items: stretch; position: relative; top: auto; right: auto; width: 349px; left: auto; height: 111px; bottom: auto; font-size: 25px; background-color: rgb(72, 72, 72);" />
     </ui:VisualElement>
 </ui:UXML>

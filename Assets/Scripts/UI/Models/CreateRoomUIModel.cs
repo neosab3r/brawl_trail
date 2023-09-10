@@ -51,6 +51,7 @@ public class CreateRoomUIModel: UIContainer
             case ECreateRoomUIButtonType.Create:
             {
                 createRoomController.View.CreateRoom(uiTextFields[0].GetTextFieldValue());
+                Hide();
                 break;
             }
         }

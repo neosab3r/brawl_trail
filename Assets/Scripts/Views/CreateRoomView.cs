@@ -7,6 +7,7 @@ using UnityEngine;
 public class CreateRoomView : MonoBehaviourPunCallbacks
 {    
     public ConnectEntryPoint EntryPoint;
+    private string name;
     public void Start()
     {
         //EntryPoint.SubscribeOnBaseControllersInit(() => { EntryPoint.GetController<CreateRoomController>().AddView(this); });
@@ -22,12 +23,20 @@ public class CreateRoomView : MonoBehaviourPunCallbacks
     {
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 4;
-        PhotonNetwork.JoinOrCreateRoom(roomName, options, TypedLobby.Default);
+        PhotonNetwork.CreateRoom(roomName, options, TypedLobby.Default);
+        name = roomName;
     }
 
     public override void OnCreatedRoom()
     {
         Debug.Log("Room created");
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("Join in Room");
+        PhotonNetwork.CurrentRoom.IsOpen = true;
+        PhotonNetwork.CurrentRoom.IsVisible = true;
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
