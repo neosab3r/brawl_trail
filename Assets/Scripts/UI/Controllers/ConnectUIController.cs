@@ -23,4 +23,9 @@ public class ConnectUIController : BaseController
     {
         mainUIModel = new ConnectMainUIModel(root);
     }
+
+    public void SetProgressBarValue(int value)
+    {
+        mainUIModel.SetProgressBarValue(value);
+    }
 }

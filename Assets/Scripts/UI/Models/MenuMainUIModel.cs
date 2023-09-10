@@ -54,7 +54,7 @@ public class MenuMainUIModel
     {
         foreach (var container in uiContainers)
         {
-            Debug.Log(container.ToolType + " -- " + buttonType);
+            Debug.Log(container.ToolType + " -- " + buttonType + " " + this);
             if (container.ToolType == buttonType && container.IsShowing == false)
             {
                 container.Show();
