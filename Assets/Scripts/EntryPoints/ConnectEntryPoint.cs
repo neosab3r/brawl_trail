@@ -6,7 +6,7 @@ public class ConnectEntryPoint : BaseEntryPoint
 {
     public void OnEnable()
     {
-        //GameObject.DontDestroyOnLoad(this);
+        GameObject.DontDestroyOnLoad(this);
     }
 
     protected override bool IsAllInited()
@@ -18,7 +18,6 @@ public class ConnectEntryPoint : BaseEntryPoint
     {
         AddController(new ResourcesController());
         AddController(new PhotonController());
-        //AddController(new CreateRoomController());
         base.InitControllers();
     }
 }

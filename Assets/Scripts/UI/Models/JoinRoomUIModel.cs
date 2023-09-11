@@ -11,16 +11,20 @@ public class JoinRoomUIModel : UIContainer
 
     private List<UIBaseButton<EJoinRoomUIButtonType>> uiButtons = new List<UIBaseButton<EJoinRoomUIButtonType>>();
     private List<UIBaseButton<string>> roomsContent = new List<UIBaseButton<string>>();
+   
     private string currentRoomName = null;
+    private List<RoomInfo> roomList = new List<RoomInfo>();
+    
     private UIBaseTemplateContainer contentElement;
     private UIBaseScrollView scrollViewElement;
-    private JoinRoomController joinRoomController;
+    private PhotonController photonController;
     private ResourcesController resourcesController;
 
     public JoinRoomUIModel(VisualElement root) : base(root)
     {
-        joinRoomController = BaseEntryPoint.Get<JoinRoomController>();
+        photonController = BaseEntryPoint.GetEntry<ConnectEntryPoint>().GetController<PhotonController>();
         resourcesController = BaseEntryPoint.Get<ResourcesController>();
+        photonController.PhotonView.onRoomListUpdate += OnRoomListUpdate;
 
         var contentButton = resourcesController.GetResource<VisualTreeAsset>(ResourceConstants.JOINROOMCONTENTELEMENT);
         contentElement = new UIBaseTemplateContainer(contentButton.CloneTree());
@@ -38,22 +42,21 @@ public class JoinRoomUIModel : UIContainer
     public override void Show()
     {
         base.Show();
-        joinRoomController.View.onRoomListUpdate += CreateRoomContent;
-        
-       Debug.Log("Count Room: " + PhotonNetwork.CountOfRooms);
+        Debug.Log("Count Room: " + PhotonNetwork.CountOfRooms);
     }
 
     public override void Hide()
     {
-        if (joinRoomController.View != null)
-        {
-            joinRoomController.View.onRoomListUpdate -= CreateRoomContent;
-        }
-
         base.Hide();
     }
 
-    private void CreateRoomContent(List<RoomInfo> roomList)
+    private void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        this.roomList = roomList;
+        CreateRoomContent();
+    }
+
+    private void CreateRoomContent()
     {
         scrollViewElement.ClearContentContainer();
 
@@ -65,7 +68,7 @@ public class JoinRoomUIModel : UIContainer
             var roomElement = new UIBaseButton<string>(buttonElement, roomInfo.Name);
             roomElement.Subscribe(OnButtonContentClick);
             roomElement.ButtonRoot.text = roomInfo.Name;
-            scrollViewElement.AddElement(visualElement);
+            scrollViewElement.AddElement(roomElement.ButtonRoot);
 
             roomsContent.Add(roomElement);
         }
@@ -105,9 +108,8 @@ public class JoinRoomUIModel : UIContainer
             {
                 if (currentRoomName != null)
                 {
-                    joinRoomController.View.JoinRoom(currentRoomName);
+                    photonController.PhotonView.JoinRoom(currentRoomName);
                 }
-
                 break;
             }
         }

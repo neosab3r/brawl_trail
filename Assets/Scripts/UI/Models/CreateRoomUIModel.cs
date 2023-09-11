@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using OLS_HyperCasual;
 using UnityEngine.UIElements;
@@ -51,6 +52,7 @@ public class CreateRoomUIModel: UIContainer
             case ECreateRoomUIButtonType.Create:
             {
                 createRoomController.View.CreateRoom(uiTextFields[0].GetTextFieldValue());
+                
                 Hide();
                 break;
             }
