@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="MainContainer" style="min-width: 100%; min-height: 100%; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="TopContainer" style="min-width: 100%; min-height: 10%; justify-content: space-between; align-items: center; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+            <ui:Button text="Выйти" display-tooltip-when-elided="true" name="LeftGame" style="min-width: 8%; min-height: 5%; max-height: none; align-items: flex-start; justify-content: flex-start; flex-direction: row; font-size: 20px; color: rgb(255, 255, 255); background-color: rgba(48, 48, 48, 0.51);" />
+            <ui:Label text="Монет: " display-tooltip-when-elided="true" name="CountMoney" style="margin-right: 10%; font-size: 35px; -unity-background-image-tint-color: rgb(255, 255, 255); -unity-text-align: upper-left;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="CenterContainer" style="flex-direction: row-reverse; min-width: 100%; min-height: 80%; align-items: center;">
+            <ui:Button text="Огонь" display-tooltip-when-elided="true" name="Fire" style="min-width: 10%; min-height: 17%; border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; margin-right: 15%; margin-top: 15%; font-size: 25px; background-color: rgba(171, 171, 171, 0.15); color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

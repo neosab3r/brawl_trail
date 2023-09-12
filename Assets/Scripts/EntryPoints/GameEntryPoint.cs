@@ -12,6 +12,7 @@ public class GameEntryPoint : BaseEntryPoint
 
     protected override void InitControllers()
     {
+        AddController(new GameUIController());
         AddController(new ResourcesController());
         AddController(new PrefabsController());
         AddController(new SpawnController());

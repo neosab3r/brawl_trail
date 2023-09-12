@@ -39,7 +39,10 @@ public class PlayerController : BaseMonoController<PlayerView, PlayerModel>
                 var vector2 = joystickController.View.Direction;
                 Vector3 direction = Vector3.forward * vector2.y + Vector3.right * vector2.x;
 
-                playerModel.Move(direction);
+                if (direction != Vector3.zero)
+                {
+                    playerModel.Move(direction, dt);
+                }
             }
         }
     }
