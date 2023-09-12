@@ -17,7 +17,7 @@ MonoBehaviour:
     m_Name: 
     m_Depth: 0
     key: GameVersion
-    value: 0.0.1
+    value: 0.0.2
     settingElementType: 3
     enabled: 0
   - m_ID: 0

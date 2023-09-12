@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -15,7 +16,7 @@ public class MenuMainUIModel
         InitButton(buttonsContainer, "CreateButton", EMenuMainUIButtonType.Create);
 
         InitUIContainer("UICreateRoom", EMenuMainUIButtonType.Create);
-        //InitUIContainer("", EMainUIButtonType.Join);
+        InitUIContainer("UIJoinRoom", EMenuMainUIButtonType.Join);
 
         foreach (var container in uiContainers)
         {

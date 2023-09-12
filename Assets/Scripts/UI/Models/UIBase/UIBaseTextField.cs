@@ -11,6 +11,6 @@ public class UIBaseTextField
 
     public string GetTextFieldValue()
     {
-        return TextFieldRoot.value;
+        return TextFieldRoot.text;
     }
 }
