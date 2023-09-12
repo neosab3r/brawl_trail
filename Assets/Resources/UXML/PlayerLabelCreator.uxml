@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="NameContainer" style="flex-direction: row; color: rgb(202, 202, 202);">
+        <ui:Label text="ИмяИгрока" display-tooltip-when-elided="true" name="PlayerNameText" style="justify-content: center; font-size: 60px; margin-left: 200px; align-items: center; min-height: 100px; -unity-text-align: middle-left; flex-direction: row; color: rgb(231, 231, 231);" />
+        <ui:Label text="Создатель" display-tooltip-when-elided="true" name="CreatorText" style="flex-direction: column; justify-content: flex-end; align-items: center; -unity-text-align: middle-center; min-height: 100px; font-size: 50px; margin-left: 30%; color: rgb(255, 255, 255);" />
+    </ui:VisualElement>
+</ui:UXML>

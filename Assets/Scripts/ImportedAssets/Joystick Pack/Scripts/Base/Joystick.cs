@@ -59,7 +59,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        IsUse = true;
         OnDrag(eventData);
     }
 
@@ -132,12 +131,9 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
-        IsUse = false;
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
     }
-
-    public bool IsUse { get; private set; }
 
     protected Vector2 ScreenPointToAnchoredPosition(Vector2 screenPosition)
     {

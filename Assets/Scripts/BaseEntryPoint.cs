@@ -10,6 +10,7 @@ namespace OLS_HyperCasual
         private Action onBaseControllersInited, onAllSystemsLoaded;
         private bool isBaseControllersInited, isAllSystemsLoaded;
         protected List<IController> controllers = new List<IController>();
+        public List<BaseEntryPoint> entryPoints = new List<BaseEntryPoint>();
         
         private static BaseEntryPoint instance;
 
@@ -46,6 +47,11 @@ namespace OLS_HyperCasual
         public static IController Get(Type type)
         {
             return GetInstance().GetController(type);
+        }
+
+        public static T GetEntry<T>() where T : BaseEntryPoint
+        {
+            return GetInstance().GetEntryPoint<T>();
         }
 
         protected virtual bool IsAllInited()
@@ -100,6 +106,19 @@ namespace OLS_HyperCasual
 
             return default;
         }
+
+        public T GetEntryPoint<T>() where T : BaseEntryPoint
+        {
+            foreach (var baseEntryPoint in entryPoints)
+            {
+                if(baseEntryPoint is T target)
+                {
+                    return target;
+                }
+            }
+
+            return default;
+        }
         
         public IController GetController(Type type)
         {
@@ -117,6 +136,11 @@ namespace OLS_HyperCasual
         protected void AddController(IController controller)
         {
             controllers.Add(controller);
+        }
+
+        public void AddEntryPoint(BaseEntryPoint entryPoint)
+        {
+            entryPoints.Add(entryPoint);
         }
 
         private void Update()
@@ -186,5 +210,6 @@ namespace OLS_HyperCasual
                 instance = null;
             }
         }
+
     }
 }

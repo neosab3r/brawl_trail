@@ -1,5 +1,0 @@
-VisualElement {
-    color: rgba(250, 250, 250, 255);
-    align-items: stretch;
-    transform-origin: center;
-}
