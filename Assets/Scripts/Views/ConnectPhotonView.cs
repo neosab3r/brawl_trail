@@ -28,6 +28,7 @@ public class ConnectPhotonView : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = gameSettingSO.GetValue("PlayerName") + Random.Range(0, 9999).ToString();
         PhotonNetwork.GameVersion = gameSettingSO.GetValue("GameVersion");
         PhotonNetwork.ConnectMethod = ConnectMethod.ConnectToMaster;
+        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.ConnectUsingSettings();
         isFirstConnected = true;
     }
