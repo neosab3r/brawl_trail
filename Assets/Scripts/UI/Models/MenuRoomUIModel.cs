@@ -76,9 +76,12 @@ public class MenuRoomUIModel: UIContainer
             }
             case EMenuRoomUIButtonType.Play:
             {
-                PhotonNetwork.CurrentRoom.IsVisible = false;
-                PhotonNetwork.CurrentRoom.IsOpen = false;
-                PhotonNetwork.LoadLevel("Game");
+                if (PhotonNetwork.LocalPlayer.IsMasterClient)
+                {
+                    PhotonNetwork.CurrentRoom.IsVisible = false;
+                    PhotonNetwork.CurrentRoom.IsOpen = false;
+                    PhotonNetwork.LoadLevel("Game");
+                }
                 break;
             }
         }

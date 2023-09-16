@@ -39,6 +39,15 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - SpawnBulletWithDelay
+  - TakeDamage
+  - InitPlayerID
+  - DeletePlayerID
+  - PlayerDeath
+  - IsDeath
+  - ShowVictoryUI
+  - Exit
+  - Restart
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

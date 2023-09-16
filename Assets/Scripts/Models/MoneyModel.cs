@@ -19,7 +19,7 @@ namespace OLS_HyperCasual
 
         public void ShowEffect()
         {
-            View.HideAndPlayEffect();
+            View.Hide();
         }
     }
 }

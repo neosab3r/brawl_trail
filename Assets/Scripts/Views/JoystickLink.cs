@@ -1,5 +1,6 @@
 using OLS_HyperCasual;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class JoystickLink : MonoBehaviour
 {

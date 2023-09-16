@@ -32,6 +32,7 @@ public class CreateRoomView : MonoBehaviourPunCallbacks
     public void CreateRoom(string roomName)
     {
         RoomOptions options = new RoomOptions();
+        options.BroadcastPropsChangeToAll = true;
         options.IsVisible = true;
         options.IsOpen = true;
         options.MaxPlayers = 4;
