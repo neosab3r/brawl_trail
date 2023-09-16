@@ -42,7 +42,6 @@ public class JoinRoomUIModel : UIContainer
     public override void Show()
     {
         base.Show();
-        Debug.Log("Count Room: " + PhotonNetwork.CountOfRooms);
     }
 
     public override void Hide()

@@ -27,3 +27,17 @@ MonoBehaviour:
     value: PhotonGame
     settingElementType: 3
     enabled: 0
+  - m_ID: 0
+    m_Name: 
+    m_Depth: 0
+    key: PlayerBlue
+    value: Player/PlayerPrefab
+    settingElementType: 3
+    enabled: 0
+  - m_ID: 0
+    m_Name: 
+    m_Depth: 0
+    key: DefaultBullet
+    value: Bullets/BulletPrefab
+    settingElementType: 3
+    enabled: 0

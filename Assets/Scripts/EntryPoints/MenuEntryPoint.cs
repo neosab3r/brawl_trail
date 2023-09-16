@@ -24,5 +24,4 @@ public class MenuEntryPoint : BaseEntryPoint
         AddController(new JoinRoomController());
         base.InitControllers();
     }
-    
 }

@@ -112,7 +112,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 9ce9e54898a5b674f80927921dd0015e, type: 2}
+    customRenderPipeline: {fileID: 11400000, guid: 47de2fdbf90b04847b0455fe1e009bff, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: High
@@ -223,7 +223,7 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
-    Android: 2
+    Android: 4
     Lumin: 5
     Nintendo Switch: 5
     PS4: 5

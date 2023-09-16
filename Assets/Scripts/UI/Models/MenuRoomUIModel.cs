@@ -3,6 +3,7 @@ using NUnit.Framework.Internal.Execution;
 using OLS_HyperCasual;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class MenuRoomUIModel: UIContainer
@@ -75,6 +76,12 @@ public class MenuRoomUIModel: UIContainer
             }
             case EMenuRoomUIButtonType.Play:
             {
+                if (PhotonNetwork.LocalPlayer.IsMasterClient)
+                {
+                    PhotonNetwork.CurrentRoom.IsVisible = false;
+                    PhotonNetwork.CurrentRoom.IsOpen = false;
+                    PhotonNetwork.LoadLevel("Game");
+                }
                 break;
             }
         }

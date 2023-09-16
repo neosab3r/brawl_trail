@@ -1,0 +1,4 @@
+﻿public enum EGameInterfaceUIButtonType
+{
+    LeftRoom
+}

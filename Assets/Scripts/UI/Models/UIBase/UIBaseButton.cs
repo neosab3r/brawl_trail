@@ -25,6 +25,18 @@ public class UIBaseButton<T>
         ButtonRoot.clicked += callback;
     }
 
+    public void SubscribeOnDown(Action<T> onClickCallback)
+    {
+        var callback = new Action(() =>
+        {
+            onClickCallback?.Invoke(ButtonType);
+        });
+            
+        subscribedDict.Add(onClickCallback, callback);
+        ButtonRoot.RegisterCallback<MouseDownEvent>(delegate { callback?.Invoke(); });
+        //ButtonRoot.RegisterCallback<PointerDownEvent>(evt => callback?.Invoke());
+    }
+
     public void Unsubscribe(Action<T> onClickCallback)
     {
         if (subscribedDict.TryGetValue(onClickCallback, out var callback) == false)

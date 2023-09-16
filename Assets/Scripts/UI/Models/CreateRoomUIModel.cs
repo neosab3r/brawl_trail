@@ -12,7 +12,6 @@ public class CreateRoomUIModel: UIContainer
     
     public CreateRoomUIModel(VisualElement root) : base(root)
     {
-        //createRoomController = BaseEntryPoint.GetEntry<ConnectEntryPoint>().GetController<CreateRoomController>();
         createRoomController = BaseEntryPoint.Get<CreateRoomController>();
         var buttonBackContainer = root.Q("TopContainer");
         var buttonCreateContainer = root.Q("BottomContainer");

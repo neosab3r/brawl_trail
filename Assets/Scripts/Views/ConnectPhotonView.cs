@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
+using ExitGames.Client.Photon.StructWrapping;
 using OLS_HyperCasual;
 using Photon.Pun;
 using Photon.Realtime;
@@ -13,6 +15,7 @@ public class ConnectPhotonView : MonoBehaviourPunCallbacks
     public Action<List<RoomInfo>> onRoomListUpdate;
     public List<RoomInfo> roomList = new List<RoomInfo>();
     private bool isFirstConnected;
+    public MoneyController moneyController;
 
     private void Start()
     {
@@ -24,10 +27,10 @@ public class ConnectPhotonView : MonoBehaviourPunCallbacks
         var gameSettingSO = EntryPoint.GetController<ResourcesController>()
             .GetResource<GameSettingsSO>(ResourceConstants.GameSettings);
 
-
         PhotonNetwork.NickName = gameSettingSO.GetValue("PlayerName") + Random.Range(0, 9999).ToString();
         PhotonNetwork.GameVersion = gameSettingSO.GetValue("GameVersion");
         PhotonNetwork.ConnectMethod = ConnectMethod.ConnectToMaster;
+        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.ConnectUsingSettings();
         isFirstConnected = true;
     }
@@ -99,6 +102,19 @@ public class ConnectPhotonView : MonoBehaviourPunCallbacks
         }
 
         onRoomListUpdate?.Invoke(this.roomList);
+    }
+
+    public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+    {
+        base.OnPlayerPropertiesUpdate(targetPlayer, changedProps);
+
+        if (targetPlayer != null && targetPlayer.IsLocal == false)
+        {
+            if (changedProps.TryGetValue("coinToDelete", out var prop))
+            {
+                moneyController.DeleteModelByHash(Convert.ToInt32(prop));
+            }
+        }
     }
 
     public void JoinRoom(string name)
